@@ -1,13 +1,13 @@
 import type { LocalCommandCall } from '../../types/command.js'
 import { getRouter } from '../../services/router/index.js'
 
-const ROUTER_VERSION = '1.2.0'
+var ROUTER_VERSION = '1.2.0'
 
-export const call: LocalCommandCall = async () => {
-  const router = getRouter()
-  const routerStatus = router ? (router.isEnabled() ? 'active' : 'disabled (fallback)') : 'not initialized'
+export var call: LocalCommandCall = async function() {
+  var router = getRouter()
+  var routerStatus = router ? (router.isEnabled() ? 'active' : 'disabled (fallback)') : 'not initialized'
 
-  const lines = [
+  var lines = [
     '## Version',
     '',
     '**openclaude:** v0.1.7',
@@ -18,6 +18,5 @@ export const call: LocalCommandCall = async () => {
     'github.com/foundationoperations/openclaude',
   ]
 
-  return { type: 'text', value: lines.join('
-') }
+  return { type: 'text', value: lines.join('\n') }
 }

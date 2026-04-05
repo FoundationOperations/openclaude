@@ -199,6 +199,21 @@ export const init = memoize(async (): Promise<void> => {
       await cleanupSessionTeams()
     })
 
+    // FOUNDATION-OPS: Initialize smart router
+    try {
+      const { initRouter } = await import('../services/router/index.js')
+      initRouter(process.cwd())
+      // FOUNDATION-OPS: Register router shutdown in graceful shutdown pipeline
+      registerCleanup(async () => {
+        try {
+          const { shutdownRouter } = await import('../services/router/index.js')
+          shutdownRouter()
+        } catch {}
+      })
+    } catch {
+      // Router init failed — continues without smart routing
+    }
+
     // Initialize scratchpad directory if enabled
     if (isScratchpadEnabled()) {
       const scratchpadStart = Date.now()

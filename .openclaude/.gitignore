@@ -1,0 +1,10 @@
+# Foundation Router data — do not commit
+sessions/
+doc-cache/
+backups/
+*.json
+*.md
+!.gitignore
+router-status.txt
+.pid
+.lock

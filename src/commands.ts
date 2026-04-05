@@ -60,6 +60,19 @@ import theme from './commands/theme/index.js'
 import vim from './commands/vim/index.js'
 import { feature } from 'bun:bundle'
 import { isBuddyEnabled } from './buddy/feature.js'
+
+// FOUNDATION-OPS: Router commands
+import routerCosts from './commands/costs/index.js'
+import routerHealth from './commands/health/index.js'
+import routerTier from './commands/tier/index.js'
+import routerLog from './commands/log/index.js'
+import routerCheckpoint from './commands/checkpoint/index.js'
+import routerDecisions from './commands/decisions/index.js'
+import routerVersion from "./commands/version/index.js"
+import routerDiagnostic from "./commands/diagnostic/index.js"
+import routerDocs from "./commands/docs/index.js"
+import routerBudget from "./commands/budget/index.js"
+import routerUndo from "./commands/undo/index.js"
 // Dead code elimination: conditional imports
 /* eslint-disable @typescript-eslint/no-require-imports */
 const proactive =
@@ -324,6 +337,17 @@ const COMMANDS = memoize((): Command[] => [
   usage,
   usageReport,
   vim,
+  routerCosts,
+  routerHealth,
+  routerTier,
+  routerLog,
+  routerCheckpoint,
+  routerDecisions,
+  routerVersion,
+  routerDiagnostic,
+  routerDocs,
+  routerBudget,
+  routerUndo,
   ...(webCmd ? [webCmd] : []),
   ...(forkCmd ? [forkCmd] : []),
   ...(buddy ? [buddy] : []),

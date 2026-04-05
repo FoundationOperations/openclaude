@@ -5,7 +5,6 @@ const undo = {
   name: 'undo',
   description: 'Rollback last changes: /undo or /undo all',
   isHidden: false,
-  isEnabled: true,
   supportsNonInteractive: true,
   argumentHint: '[all]',
   load: () => import('./undo.js'),

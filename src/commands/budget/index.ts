@@ -5,7 +5,6 @@ const budget = {
   name: 'budget',
   description: 'Set daily spend budget: /budget 5.00',
   isHidden: false,
-  isEnabled: true,
   supportsNonInteractive: true,
   argumentHint: '<amount>',
   load: () => import('./budget.js'),

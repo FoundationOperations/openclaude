@@ -5,7 +5,6 @@ const diagnostic = {
   name: 'diagnostic',
   description: 'Full router state dump for debugging',
   isHidden: false,
-  isEnabled: true,
   supportsNonInteractive: true,
   load: () => import('./diagnostic.js'),
 } satisfies Command

@@ -5,7 +5,6 @@ const version = {
   name: 'version',
   description: 'Show openclaude and Foundation Router version',
   isHidden: false,
-  isEnabled: true,
   supportsNonInteractive: true,
   load: () => import('./version.js'),
 } satisfies Command

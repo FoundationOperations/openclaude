@@ -5,7 +5,6 @@ const checkpoint = {
   name: 'checkpoint',
   description: 'Save a session checkpoint with decisions, tasks, and modified files',
   isHidden: false,
-  isEnabled: true,
   supportsNonInteractive: true,
   load: () => import('./checkpoint.js'),
 } satisfies Command

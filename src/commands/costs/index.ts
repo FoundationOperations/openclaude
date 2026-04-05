@@ -5,7 +5,6 @@ const costs = {
   name: 'costs',
   description: 'Show routing costs, savings vs all-Opus, and budget status',
   isHidden: false,
-  isEnabled: true,
   supportsNonInteractive: true,
   argumentHint: '[week|month|savings|task]',
   load: () => import('./costs.js'),

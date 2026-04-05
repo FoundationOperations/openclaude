@@ -5,7 +5,6 @@ const health = {
   name: 'health',
   description: 'Show provider health status, latency, and availability',
   isHidden: false,
-  isEnabled: true,
   supportsNonInteractive: true,
   argumentHint: '[endpoint]',
   load: () => import('./health.js'),
